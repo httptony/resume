@@ -80,7 +80,7 @@ const children = [
       r("+27 79 237 9248", { size: 18 }), r(SEP, { size: 18 }),
       link("17tonydaniels@gmail.com", "mailto:17tonydaniels@gmail.com", false), r(SEP, { size: 18 }),
       link("linkedin.com/in/tony-tshandu", "https://www.linkedin.com/in/tony-tshandu"), r(SEP, { size: 18 }),
-      link("github.com/httpstony", "https://github.com/httpstony"),
+      link("github.com/httptony", "https://github.com/httptony"),
     ],
   }),
 
