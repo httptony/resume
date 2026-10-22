@@ -18,12 +18,12 @@ const t = (text, o = {}) => r(text, { color: TEAL, ...o });
 
 const section = (text) => new Paragraph({
   keepNext: true,
-  spacing: { before: 130, after: 60 },
+  spacing: { before: 110, after: 50 },
   border: { bottom: { style: BorderStyle.SINGLE, size: 8, color: TEAL, space: 3 } },
   children: [r(text, { bold: true })],
 });
 
-const entry = (name, role, date, before = 90, italicRole = true) => new Paragraph({
+const entry = (name, role, date, before = 70, italicRole = true) => new Paragraph({
   keepNext: true,
   spacing: { before, after: 25 },
   children: [
@@ -91,11 +91,11 @@ const children = [
   // Experience
   section("PROFESSIONAL EXPERIENCE"),
   entry("Maidar Secure", "Junior Security Engineer", "Oct 2026 - Present", 0),
+  bullet("Fixed the failing Zoho MCP server in Strike48 and reorganised Devo user permissions and privileges to match each role."),
 
   entry("Cyber1 Solutions", "Cybersecurity Engineer Intern", "Jun 2026 - Oct 2026"),
   bullet("Built an SLA tracking pipeline in Devo SOAR (LogicHub) for a major South African bank, timing every Zoho Desk ticket against notify, escalate, respond and resolve targets."),
-  bullet("Wrote the logic in Python and SQL: ticket state tracking, severity-based breach windows and a 44-field data model."),
-  bullet("Limited the live playbook to open tickets to avoid timeouts, keeping the breach dashboard refreshed every 3 minutes."),
+  bullet("Wrote the logic in Python and SQL (state tracking, severity-based breach windows, 44-field data model) and scoped it to open tickets so the breach dashboard refreshes every 3 minutes."),
   bullet("Built a SIEM ingestion monitor in Strike48 Prospector Studio (YAML, Lua, Devo MCP) that compares daily event volumes with a 7-day baseline and writes LLM fault reports."),
   bullet("Traced a 75% under-count in reported events (94 vs. 380) to a timestamp format bug in the monitor's queries, and fixed it."),
   bullet("Designed the company's Strike48 access model, mapping job positions to groups and a small set of custom roles."),
@@ -107,13 +107,11 @@ const children = [
   bullet("Resolved 15+ IT tickets a month and cut unauthorised access incidents by an estimated 40% with new access controls."),
 
   new Paragraph({
-    spacing: { before: 90, after: 0 },
+    spacing: { before: 70, after: 0 },
     children: [
       r("Earlier roles:  ", { bold: true }),
       r("Solutions Specialist, Solotek Power Africa (2021-2022)" + DOT +
-        "Showroom Manager, I'm Healthy (2022)" + DOT +
-        "Sports Coach, Bryanston High School (2020)" + DOT +
-        "Brand Promoter & Events Coordinator, independent contractor (2019)"),
+        "Showroom Manager, I'm Healthy (2022)"),
     ],
   }),
 
@@ -147,14 +145,15 @@ const children = [
   cert("Cisco Network Technician Career Path", "Completed"),
   cert("Google Cybersecurity Professional Certificate (Foundations of Cybersecurity, Play It Safe)", "Completed"),
   cert("CompTIA Security+", "In progress, expected 2027"),
+  cert("Arcon Privileged Access Management (PAM) Training, 2 days", "Completed"),
   cert("AI & Cyber Security One-Day Intensive, CDDTI", "Completed"),
   cert("Bitcoin Lightning Developer Bootcamp, Africa Free Routing", "Completed"),
 
   // Skills & interests
   section("SKILLS & INTERESTS"),
   skill("Languages", ["Python", "SQL", "Devo LINQ", "Lua", "YAML", "JavaScript", "React", "HTML/CSS", "C++", "Git/GitHub"].join(DOT)),
-  skill("Security", ["Devo SIEM", "Devo SOAR (LogicHub)", "SOAR playbook design", "SIEM monitoring", "Access control design", "Zoho Desk"].join(DOT)),
-  skill("AI Tools", ["Strike48 Prospector Studio", "Claude", "ChatGPT", "Gemini", "Grok", "Meta AI", "GitHub Copilot", "MCP"].join(DOT)),
+  skill("Security", ["Devo SIEM", "Devo SOAR (LogicHub)", "SOAR playbook design", "SIEM monitoring", "Access control & RBAC", "Arcon PAM"].join(DOT)),
+  skill("AI Tools", ["Strike48 Prospector Studio", "Claude", "ChatGPT", "Gemini", "GitHub Copilot", "MCP server integration"].join(DOT)),
   skill("Blockchain", ["Bitcoin Script (P2SH, SegWit, multisig, timelocks)", "Lightning Network"].join(DOT)),
   skill("Interests", ["Chess", "Tennis", "Running", "Soccer", "Former national cheerleader"].join(DOT)),
 ];
